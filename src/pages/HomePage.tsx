@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import FireWorks from "../components/Fireworks";
 import Typewriter from "typewriter-effect";
+import { MusicPlayer } from "../components/MusicPlayer";
 
 const CountdownTimer: React.FC<{
   targetDate: Date;
@@ -73,10 +74,10 @@ const CountdownTimer: React.FC<{
                 }}
                 onInit={(typewriter) => {
                   typewriter
-                    .typeString(`🎉Happy New Year🎉`)
+                    .typeString(`Happy New Year🎉`)
                     .pauseFor(2000)
                     .deleteAll()
-                    .typeString(`🎉Thank You 2023!🎉`)
+                    .typeString(`Thank You 2023!🎉`)
                     .pauseFor(2000)
                     .deleteAll()
                     .start();
@@ -87,7 +88,7 @@ const CountdownTimer: React.FC<{
         </>
       ) : (
         <div className="w-full flex justify-center items-center">
-          <div className="flex flex-row text-5xl sm:text-6xl lg:text-6xl justify-between shadow-md duration-500 bg-white bg-opacity-10 rounded-lg shadow-sky-500 text-center">
+          <div className="flex flex-row text-5xl sm:text-6xl lg:text-6xl justify-between shadow-md duration-500 bg-white bg-opacity-20 rounded-lg shadow-sky-500 text-center">
             <div className="w-full sm:w-40 lg:w-40 py-2 sm:p-4 lg:p-4">
               {formatTime(timeLeft.days)}
             </div>
@@ -136,6 +137,7 @@ const App: React.FC = () => {
             targetDate={targetDate}
             onCountdownFinish={() => {}}
           />
+          <MusicPlayer />
         </div>
       </div>
     </>
