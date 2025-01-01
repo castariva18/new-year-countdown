@@ -8,7 +8,8 @@ const CountdownTimer: React.FC<{
   onCountdownFinish: () => void;
 }> = ({ targetDate, onCountdownFinish }) => {
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-
+  var today = new Date();
+  var newYear = today.getFullYear();
   function calculateTimeLeft() {
     const difference = targetDate.getTime() - new Date().getTime();
     const isTargetDatePassed = difference <= 0;
@@ -74,10 +75,10 @@ const CountdownTimer: React.FC<{
                 }}
                 onInit={(typewriter) => {
                   typewriter
-                    .typeString(`Happy New Year🎉`)
+                    .typeString(`Happy New Year!`)
                     .pauseFor(2000)
                     .deleteAll()
-                    .typeString(`Thank You 2023!🎉`)
+                    .typeString(`Thank You ${newYear - 1}!`)
                     .pauseFor(2000)
                     .deleteAll()
                     .start();
@@ -112,7 +113,9 @@ const CountdownTimer: React.FC<{
 };
 
 const App: React.FC = () => {
-  const targetDate = new Date(2024, 11, 31, 23, 59, 59);
+  var today = new Date();
+  var newYear = today.getFullYear();
+  const targetDate = new Date(newYear, 11, 31, 23, 59, 59);
 
   return (
     <>
