@@ -78,7 +78,7 @@ const CountdownTimer: React.FC<{
                     .typeString(`Happy New Year!`)
                     .pauseFor(2000)
                     .deleteAll()
-                    .typeString(`Thank You ${newYear - 1}!`)
+                    .typeString(`Thank You ${newYear}!`)
                     .pauseFor(2000)
                     .deleteAll()
                     .start();
